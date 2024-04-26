@@ -27,8 +27,10 @@ struct LandmarkRow: View {
     }
 }
 
-// Preview untuk LandmarkRow
 #Preview {
-    LandmarkRow(landmark: landmarks[0]) 
-    // Menampilkan preview dari LandmarkRow dengan landmark pertama dari array landmarks
+    // Menampilkan dua instance LandmarkRow dengan landmark yang berbeda
+    Group {
+        LandmarkRow(landmark: landmarks[0])
+        LandmarkRow(landmark: landmarks[1])
+    }
 }
