@@ -9,9 +9,11 @@ import SwiftUI
 
 struct CircleImage: View {
 // Menampilkan gambar dengan bentuk lingkaran, overlay putih, dan bayangan.
+    var image: Image
+    
     var body: some View {
-        Image("turtlerock")
-            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/) 
+        image
+            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             // Menerapkan kliping pada gambar agar berbentuk lingkaran.
             .overlay{
                 // Menambahkan overlay lingkaran putih
@@ -23,5 +25,5 @@ struct CircleImage: View {
 }
 
 #Preview {
-    CircleImage()
+    CircleImage(image: Image("turtlerock"))
 }

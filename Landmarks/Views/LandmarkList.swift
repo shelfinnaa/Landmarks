@@ -14,7 +14,7 @@ struct LandmarkList: View {
             List(landmarks) { landmark in
                 // Setiap landmark dalam List dibungkus dengan NavigationLink untuk navigasi ke detail landmark.
                 NavigationLink {
-                    LandmarkDetail()
+                    LandmarkDetail(landmark: landmark)
                 } label: {
                     LandmarkRow(landmark: landmark)
                 }
