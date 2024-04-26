@@ -7,7 +7,15 @@
 
 import Foundation
 
-var landmarks: [Landmark] = load("landmarkData.json") 
+// Definisi kelas ModelData yang mengonformasikan protocol ObservableObject.
+@Observable
+class ModelData {
+    // Properti untuk menyimpan array landmark.
+    var landmarks: [Landmark] = load("landmarkData.json")
+}
+
+
+var landmarks: [Landmark] = load("landmarkData.json")
 // Memuat data landmark dari file JSON.
 
 func load<T: Decodable>(_ filename: String) -> T {
