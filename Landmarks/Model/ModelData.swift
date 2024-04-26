@@ -13,6 +13,20 @@ class ModelData {
     // Properti untuk menyimpan array landmark.
     var landmarks: [Landmark] = load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json")
+    
+    // Properti `features` adalah array dari objek Landmark yang merupakan landmark unggulan.
+    var features: [Landmark] {
+        landmarks.filter { $0.isFeatured }
+    }
+    
+    // Properti `categories` adalah kamus yang mengelompokkan landmark berdasarkan kategori mereka.
+    var categories: [String: [Landmark]] {
+        Dictionary(
+            grouping: landmarks,
+            by: { $0.category.rawValue }
+        )
+    }
+    
 }
 
 
@@ -20,7 +34,7 @@ var landmarks: [Landmark] = load("landmarkData.json")
 // Memuat data landmark dari file JSON.
 
 func load<T: Decodable>(_ filename: String) -> T {
-// Fungsi generik untuk memuat data dari file JSON.
+    // Fungsi generik untuk memuat data dari file JSON.
     
     let data: Data // Variabel untuk menyimpan data dari file JSON.
     
