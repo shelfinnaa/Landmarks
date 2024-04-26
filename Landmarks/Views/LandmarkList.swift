@@ -9,10 +9,8 @@ import SwiftUI
 
 struct LandmarkList: View {
     var body: some View {
-        // Menampilkan daftar landmark dalam List.
-        List {
-            LandmarkRow(landmark: landmarks[0])
-            LandmarkRow(landmark: landmarks[1])
+        List(landmarks) { landmark in
+            LandmarkRow(landmark: landmark)
         }
     }
 }

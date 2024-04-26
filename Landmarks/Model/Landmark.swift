@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct Landmark: Hashable, Codable {
+struct Landmark: Hashable, Codable, Identifiable  { //to provide a unique identifier for instances of a type.
 // Definisi struct Landmark untuk merepresentasikan landmark.
     
     var id: Int
