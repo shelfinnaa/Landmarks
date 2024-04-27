@@ -13,6 +13,7 @@ class ModelData {
     // Properti untuk menyimpan array landmark.
     var landmarks: [Landmark] = load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json")
+    var profile = Profile.default
     
     // Properti `features` adalah array dari objek Landmark yang merupakan landmark unggulan.
     var features: [Landmark] {
