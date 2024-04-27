@@ -34,6 +34,10 @@ struct Landmark: Hashable, Codable, Identifiable  { //to provide a unique identi
         Image(imageName)
     }
     
+    var featureImage: Image? {
+        isFeatured ? Image(imageName + "_feature") : nil
+    }
+    
     private var coordinates: Coordinates
     // Properti untuk koordinat landmark.
     var locationCoordinate: CLLocationCoordinate2D {

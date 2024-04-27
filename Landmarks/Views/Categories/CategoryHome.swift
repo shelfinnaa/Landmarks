@@ -14,11 +14,8 @@ struct CategoryHome: View {
     var body: some View {
         NavigationSplitView { // Menampilkan split view dengan daftar dan detail
             List { // Menampilkan daftar landmark
-                modelData.features[0].image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+                PageView(pages: modelData.features.map { FeatureCard(landmark: $0) })
+                    .listRowInsets(EdgeInsets())
                 
                 // Menampilkan baris kategori untuk setiap kategori
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
