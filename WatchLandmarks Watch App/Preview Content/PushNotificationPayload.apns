@@ -12,5 +12,5 @@
     "landmarkIndex": 1,
 
 
-    "Simulator Target Bundle": "com.example.apple-samplecode.Landmarks.watchkitapp"
+    "Simulator Target Bundle": "Shelfinna.Landmarks.watchkitapp"
 }

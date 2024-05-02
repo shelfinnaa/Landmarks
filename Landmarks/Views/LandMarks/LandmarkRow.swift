@@ -16,10 +16,19 @@ struct LandmarkRow: View {
             // Menampilkan gambar landmark
                 .resizable()
                 .frame(width: 50, height: 50)
+                .cornerRadius(5)
             // Mengatur ukuran gambar
             
-            Text(landmark.name)
-            // Menampilkan nama landmark
+            VStack(alignment: .leading) {
+                Text(landmark.name)
+                    .bold()
+#if !os(watchOS)
+                Text(landmark.park)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+#endif
+            }
+            
             
             Spacer()
             // Spacer untuk mengisi ruang di sebelah kanan
@@ -30,6 +39,7 @@ struct LandmarkRow: View {
                     .foregroundStyle(.yellow)
             }
         }
+        .padding(.vertical, 4)
     }
 }
 
